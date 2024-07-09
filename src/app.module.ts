@@ -8,8 +8,6 @@ import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
 import { OrganizationModule } from './organization/organization.module';
 import { Organisation } from './organization/entities/organization.entity';
-import { readFileSync, readFile } from 'fs';
-import path from 'path';
 
 @Module({
   imports: [
