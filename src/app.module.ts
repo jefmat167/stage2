@@ -41,7 +41,7 @@ import path from 'path';
         },
         entities: [User, Organisation],
         logging: true,
-        synchronize: true, // change this to false before deploying...
+        synchronize: true, 
       }),
     }),
     OrganizationModule,
