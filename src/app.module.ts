@@ -29,14 +29,15 @@ import { Organisation } from './organization/entities/organization.entity';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: "postgres",
-        host: configService.get('DB_HOST'),
-        port: +configService.get<number>('DB_PORT'),
-        username: configService.get('DB_USERNAME'),
-        password: configService.get('DB_PASSWORD'),
-        database: configService.get('DB_DATABASE'),
-        ssl: {
-          ca: "../ca.pem"
-        },
+        url: configService.get<string>('DB_URL'),
+        // host: configService.get('DB_HOST'),
+        // port: +configService.get<number>('DB_PORT'),
+        // username: configService.get('DB_USERNAME'),
+        // password: configService.get('DB_PASSWORD'),
+        // database: configService.get('DB_DATABASE'),
+        // ssl: {
+        //   ca: "../ca.pem"
+        // },
         entities: [User, Organisation],
         logging: true,
         synchronize: true, 
