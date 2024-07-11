@@ -29,15 +29,14 @@ import { Organisation } from './organization/entities/organization.entity';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: "postgres",
-        url: "postgres://avnadmin:AVNS_7SQ5tjHFHRPKs-GDY_X@stage2-jeffmatt167.e.aivencloud.com:18280/defaultdb?sslmode=require",
-        // host: configService.get('DB_HOST'),
-        // port: +configService.get<number>('DB_PORT'),
-        // username: configService.get('DB_USERNAME'),
-        // password: configService.get('DB_PASSWORD'),
-        // database: configService.get('DB_DATABASE'),
-        // ssl: {
-        //   ca: "../ca.pem"
-        // },
+        host: configService.get('DB_HOST'),
+        port: +configService.get<number>('DB_PORT'),
+        username: configService.get('DB_USERNAME'),
+        password: configService.get('DB_PASSWORD'),
+        database: configService.get('DB_DATABASE'),
+        ssl: {
+          ca: "../ca.pem"
+        },
         entities: [User, Organisation],
         logging: true,
         synchronize: true, 
